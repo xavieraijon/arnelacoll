@@ -1,0 +1,384 @@
+/*
+ *	Projecte: Arnela Coll
+ *	Autor: Xavier Aijon
+ */
+
+// ----- Imports ----- //
+
+@import "assets/bootstrap.min";
+@import "assets/normalize";
+@import "compass";
+@import "assets/fonts";
+@import url(http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic);
+
+// ----- Variables ----- //
+
+$yellow: #bd9825;
+$yellow2: #edbf2f;
+$lightYellow: #f3f1e7;
+$btnGray: #585857;
+$gray: #575755;
+$lightGray: #cfcfcd;
+$txtColor: #7e7b78;
+$titleFont: "BebasNeueRegular";
+
+// ----- General ----- //
+
+* { @include box-sizing(border-box); }
+
+html { font-size: 62.5%; }
+
+body {
+	font-family: "PT Sans","Myriad Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 1.4rem;
+	color: $txtColor;
+	background: url(../images/top_img.jpg) center top no-repeat, url(../images/top_bg.jpg) left top repeat-x, #dfdfdf;
+}
+
+p { 
+	margin: 0;
+	line-height: 1.8rem;
+}
+
+.yellow {
+	color: $yellow;
+}
+
+.white {
+	color: white;
+}
+
+.fr {
+	float: right;
+}
+
+.fl {
+	float: left;
+}
+
+.p20 {
+	padding: 20px;
+}
+
+figure {
+	img {
+		max-width: 100%;
+	}
+}
+
+// ----- Headers ----- //
+
+h1,
+h2,
+h3,
+h4 { 
+	margin: 0;
+	padding: 0;
+	font-family: $titleFont;
+	font-weight: 300;
+}
+h1 {
+	font-size: 4.8rem;
+	color: $yellow;
+}
+h2 {
+	margin-top: -10px;
+	font-size: 3rem;
+	color: #2a2928;
+}
+h3 {
+	font-size: 2.1rem;
+	text-transform: uppercase;
+	color: #e4e4e4;
+	padding: 0;
+	margin: 0;
+}
+
+// ----- Header ----- //
+
+.top-header {
+	height: 110px;
+}
+
+// ----- Logo ----- //
+
+.logo {
+	margin-top: 25px;
+}
+
+// ----- Navigation / Menus ----- //
+
+.nav {
+
+	&.top-nav {
+		border-top: 1px solid #3e3727;
+		background-color: #282318;
+		@include filter-gradient(#282318, #3c3827, vertical);
+		@include background-image(linear-gradient(top,  #282318 0%,#383021 53%,#3c3827 100%));
+	}
+
+	width: 100%;
+	height: 54px;
+	font-family: $titleFont;
+	font-size: 2.1rem;
+
+	ul {
+		display: block;
+		margin: 0 10px 0 0;
+		padding: 0;
+		list-style: none;
+
+		li {
+			display: inline-block;
+
+			a {
+				display: block;
+				padding: 0 10px;
+				line-height: 54px;
+				text-transform: uppercase;
+				font-weight: bold;
+				text-decoration: none;
+
+			}
+		}
+
+		&.main-nav {
+			li {
+				a {
+					color: white;
+					@include text-shadow(0 1px 3px lighten(black, 10%));
+					&:hover, &.current {
+						color: $yellow2;
+					}
+				}
+			}
+		}
+
+		&.footer-nav {
+			li {
+				a {
+					color: $gray;
+					&:hover, &.current {
+						color: black;
+					}
+				}
+			}			
+		}
+	}
+}
+
+// ----- Wrapper ----- //
+
+.wrapper {
+	background-color: #fff;
+	padding-bottom: 40px;
+	@include clearfix;
+}
+
+// ----- Slider ----- //
+
+.slider {
+	height: 360px;
+	margin-top: 20px;
+	padding: 0;
+
+	img { max-width: 100%; }
+}
+
+// ----- Pitch ----- //
+
+#pitch {
+	background-color: #010101;
+	@include filter-gradient(#010101, #3d3b31, vertical);
+	@include background-image(linear-gradient(top,  #010101 0%,#3d3b31 100%));
+	@include clearfix;
+
+	.column {
+		width: 299px;
+		color: #848484;
+		border-right: 1px solid #2d2c27;
+		@include text-shadow(0 1px 2px lighten(black, 5%));
+
+		h3 { 
+			padding: 15px 15px 0 15px;
+		}
+
+		span {
+			padding: 0 15px 0 15px;
+			color: $yellow2;
+		}
+
+		p {
+			padding: 0 15px 15px 15px;
+		}
+
+	}
+}
+
+// ----- Buttons ----- //
+
+.button {
+	display: block;
+	width: 110px;
+	height: 32px;
+	text-align: center;
+	line-height: 34px;
+	text-transform: uppercase;
+	text-decoration: none;
+	color: white;
+	font-family: $titleFont;
+	font-size: 2.1rem;
+	text-shadow: none;
+
+	&.btn-yellow { 
+		background-color: $yellow;
+		margin: 0 0 15px 15px;
+
+		&:hover {
+			background-color: lighten($yellow, 20%);
+		}
+	}
+
+	&.btn-gray { 
+		background-color: $btnGray;
+
+		&:hover {
+			background-color: lighten($btnGray, 20%);
+		}
+	}
+}
+
+// ----- Content ----- //
+
+#content {
+	float: left;
+	// width: 100%;
+	margin-top: 40px;
+	@include clearfix;
+}
+
+.color-column {
+	background-color: $lightYellow;
+	@include box-shadow( inset 0 0 0 1px #e3dfd9 );
+}
+
+.photo-team {
+	position: relative;
+	height: 210px;
+	overflow: hidden;
+	cursor: pointer;
+
+	div {
+		position: absolute;
+		bottom: -72px;
+		left: 0;
+		width: 100%;
+		padding: 10px 0;
+		background-color: rgba(237,192,47,0.85);
+		text-align: center;
+
+		@include opacity(0);
+		// @include transform(rotate(30deg));
+		@include transition(all 0.2s ease);
+
+		span {
+			color: black;
+			font-weight: bold;
+		}
+	}
+
+	&:hover div {
+		bottom: 0;
+
+		@include opacity(1);
+		// @include transform(rotate(0));
+	}
+}
+
+// ----- Footer ----- //
+
+#footer {
+	height: 65px;
+	border-top: 20px solid $gray;
+	margin-bottom: 40px;
+}
+
+.rights {
+	height: 50px;
+	text-align: center;
+	background-color: $lightGray;
+
+	p {
+		line-height: 50px;
+	}
+}
+
+// ----- Media Quieries ----- //
+
+@media (max-width: 979px) and (min-width: 768px) {
+
+	// ----- General ----- //
+	.p20 {
+		padding: 10px;
+	}
+
+	// ----- Header ----- //
+	.top-header {
+		height: 90px;
+	}
+
+	// ----- Slider ----- //
+	.slider {
+		width: auto;
+		height: 270px;
+		margin: 10px 10px 0 10px;
+	}
+
+	// ----- Pitch ----- //
+	#pitch {
+		width: 704px;
+		margin-left: 10px;
+
+		.column {
+			width: 221px;
+		}
+	}
+
+	// ----- Content ----- //
+	#content {
+		margin-top: 20px;
+		margin-left: 10px;
+
+		.left-content {
+			margin-right: 20px;
+		}
+
+		.right-content {
+			width: 436px;
+		}
+		
+		.small-column {
+			margin-left: 10px;
+		}
+	}
+
+	.full {
+		width: 704px !important;
+	}
+
+	.photo-team {
+		overflow: hidden;
+		font-size: 75%;
+
+		div {
+			width: 105px;
+			bottom: 54px;
+			@include opacity(1);
+			@include transform(rotate(0));
+		}
+
+		&:hover div { 
+			bottom: 54px;
+		}
+	}
+}
